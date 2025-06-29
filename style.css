@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: whitesmoke;
+    font-family: 'Leckerli One', cursive;
+    font-size: large;
+    background-color: rgb(256, 256, 256);
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #e94d58;
+    margin: 15px 0;
+}
+
+.gif {
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+
+
+
+button {
+    
+    width: 150px;
+    height: inherit;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px gray;
+    border: 2px solid #e94d58;
+}
+/* Container to align buttons vertically */
+.btn-container {
+  position: relative;
+  height: 200px;
+  margin-top: 30px;
+}
+
+/* YES BUTTON – static, centered */
+.yes-btn {
+  width: 150px;
+  padding: 10px;
+  font-size: 1.2em;
+  background: #e94d58;
+  color: white;
+  border-radius: 30px;
+  border: 2px solid #e94d58;
+  cursor: pointer;
+  box-shadow: 0 2px 4px gray;
+  position: absolute;
+  left: 30%;
+  top: 80%;
+
+  z-index: 1;
+  margin-bottom: 50px;
+}
+
+/* NO BUTTON – movable, starts below */
+.no-btn {
+  width: 150px;
+  padding: 10px;
+  font-size: 1.2em;
+  background: white;
+  color: #e94d58;
+  border-radius: 30px;
+  border: 2px solid #e94d58;
+  cursor: pointer;
+  box-shadow: 0 2px 4px gray;
+  position: absolute;
+  left: 60%;
+  top: 80%;
+  transform: translate(-50%, 0);
+  z-index: 2;
+}
+
+.yes-btn,
+.no-btn {
+    width: 150px;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    border: 2px solid #e94d58;
+    cursor: pointer;
+    box-shadow: 0 2px 4px gray;
+    font-family: 'Leckerli One', cursive;
+}
+
+
+.calendar-btn {
+    background: #e94d58;
+    color: white;
+    border-radius: 30px;
+    border: 2px solid #e94d58;
+    box-shadow: 0 2px 4px gray;
+    font-size: 1.2em;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Leckerli One', cursive;
+}
+
+.calendar-btn:hover {
+    background: #c53b48; /* darker pink on hover */
+}
+
+/* Make sure wrapper is flex-centered vertically and horizontally */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Center the calendar form content */
+#calendar-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+#calendar-form input[type="datetime-local"] {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+

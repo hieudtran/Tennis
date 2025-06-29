@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yay!! 🎉</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <h2>Can't wait to see you there 🫡</h2>
+    <img class="gif" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTc4bjBhZ2Jkdm05b2Z6OGQ3cnUxbzk3ZWhlOG90cDkzOGQwMWxhbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="happy gif" />
+  </div>
+
+<script>
+    const dateString = localStorage.getItem("tennisDate");
+
+    if (dateString) {
+      const date = new Date(dateString);
+      const options = { weekday: "long", month: "long", day: "numeric", hour: "numeric", minute: "2-digit" };
+      const formatted = date.toLocaleString(undefined, options);
+
+      document.getElementById("date-message").textContent = `See you on ${formatted}! 🎾`;
+    } else {
+      document.getElementById("date-message").textContent = `Can't wait to play tennis with you! 🎾`;
+    }
+  </script>
+
+</body>
+</html>

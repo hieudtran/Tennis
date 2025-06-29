@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's Schedule Our Tennis Game :D</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="calendar-form">
+    <h2>Let's Schedule Our Tennis Game 📅</h2>
+    <input type="datetime-local" id="datetime" name="datetime" />
+    <button class="calendar-btn" onclick="saveToCalendar()">Save to Google Calendar</button>
+  </div>
+
+  <script>
+    function saveToCalendar() {
+      const datetimeInput = document.getElementById("datetime").value;
+      if (!datetimeInput) {
+        alert("Please select a date and time!");
+        return;
+      }
+
+      const start = new Date(datetimeInput);
+      const end = new Date(start.getTime() + 60 * 60 * 1000); // +1 hour
+
+      localStorage.setItem("tennisDate", start.toISOString());
+
+      const formatDate = (date) => date.toISOString().replace(/-|:|\.\d+/g, '');
+      const startStr = formatDate(start);
+      const endStr = formatDate(end);
+
+      const title = encodeURIComponent("🎾 Tennis with Johnnyyy!");
+      const details = encodeURIComponent("The details shall be discussed once you text me back!");
+      const location = encodeURIComponent("Uhmmm, we shall see");
+
+      const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startStr}/${endStr}&details=${details}&location=${location}`;
+
+      // Open calendar in new tab and redirect this page to final.html
+      window.open(calendarUrl, "_blank");
+      window.location.href = "final.html";
+    }
+  </script>
+  <img class="gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExem04OXpkNGFxZ25vcm8zNm5vYTQxMTZ6Nnc2ZThjNXNoM29sdDBueCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/6IEIFOBIb1Y2f2mcnO/giphy.gif" alt="waiting gif" />
+</body>
+</html>
